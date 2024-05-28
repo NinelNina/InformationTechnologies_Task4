@@ -1,0 +1,25 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bus Stop Simulation" Height="450" Width="800">
+    <Grid>
+        <ListView ItemsSource="{Binding Buses}" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bus Number" DisplayMemberBinding="{Binding BusNumber}" />
+                    <GridViewColumn Header="Bus Capacity" DisplayMemberBinding="{Binding Capacity}" />
+                    <GridViewColumn Header="Free Seats" DisplayMemberBinding="{Binding FreeSeats}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ListView ItemsSource="{Binding BusStops}" Margin="10" VerticalAlignment="Bottom">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Stop Number" DisplayMemberBinding="{Binding StopNumber}" />
+                    <GridViewColumn Header="Waiting Passengers" DisplayMemberBinding="{Binding WaitingPassengers.Count}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
